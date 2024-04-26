@@ -44,7 +44,7 @@ Open request ids are saved in lists together with the workflow id to enable hand
 All requests, intermediate results, the open request list and the final result are saved in a json file to restist (un)expected stops.
 It constantly checks for new workflow requests, as well as results for open requests within running workflows. 
 Once a new result is posted, it is picked up, saved and based on all available parameter of the workflow (and if necessary some calculations) the next quantity is requested. The schema for the next request is obtained from an endpoint of FINALES.
-Content of the workflow are requests to the tenants of Cycler(Channel reservation),ASAB(elektrolyte mixing), Transportation(elektrolyte->AutoBASS), AutoBASS(cell assembly), again Transportation(cells->Cycler), Cycler(start,export,analysis) and Degradation_model(predict lifetime).
+Content of the workflow are requests to the tenants of Cycler(Channel reservation),ASAB(elektrolyte mixing), Transportation(elektrolyte->AutoBASS), AutoBASS(cell assembly), again Transportation(cells->Cycler), Cycler(start,export,analysis) and Degradation_model(predict lifetime). For the cycler the Overlort creates one request for each cell defined in the AutoBASS result and also propergates this for the request of lifetime prediction. It summs all results up as one result for the optimizer.
 A logger with self-designed messages is implemented to enable faster debugging and logging.
 
 
