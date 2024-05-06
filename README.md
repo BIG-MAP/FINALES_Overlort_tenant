@@ -5,18 +5,22 @@ The Overlort tenant created for the use with FINALES
 
 # Related Documents and Links to FINALES
 
-Documents related to this project and its broader context can be found on the respective Wiki page of this project: [https://github.com/BIG-MAP/FINALES2/wiki/Links](https://github.com/BIG-MAP/FINALES2/wiki/Links)
+Documents related to the FINALES project and its broader context can be found on the
+respective Wiki page of the project:
+[https://github.com/BIG-MAP/FINALES2/wiki/Links](https://github.com/BIG-MAP/FINALES2/wiki/Links)
 
-Links to the other related tenants and FINALES.
+Links to FINALES:
 
-1. FINALES 2 latest version Github
+1. FINALES latest version Github
 [https://github.com/BIG-MAP/FINALES2](https://github.com/BIG-MAP/FINALES2)
 
-1. FINALES 2 used Version Zenodo
+1. FINALES v1.1.0 Zenodo
 [10.5281/zenodo.10987727](10.5281/zenodo.10987727)
 
-1. Schemas of FINALES 2
+1. Schemas of FINALES v1.1.0
 [https://github.com/BIG-MAP/FINALES2_schemas](https://github.com/BIG-MAP/FINALES2_schemas)
+
+Links to the other related tenants:
 
 1. Optimizer Tenant
 [https://github.com/BIG-MAP/F2Opt](https://github.com/BIG-MAP/F2Opt)
@@ -33,7 +37,7 @@ Links to the other related tenants and FINALES.
 1. Cycler Tenant
 [https://github.com/BIG-MAP/FINALES_Cycler_tenant](https://github.com/BIG-MAP/FINALES_Cycler_tenant)
 
-1. Degradation_model Tenant
+1. Degradation model Tenant
 [https://github.com/BIG-MAP/eol_degradation_tenant](https://github.com/BIG-MAP/eol_degradation_tenant)
 
 
@@ -47,9 +51,26 @@ Once a new result is posted, it is picked up, saved and based on all available p
 Content of the workflow are requests to the tenants of Cycler(Channel reservation),ASAB(elektrolyte mixing), Transportation(elektrolyte->AutoBASS), AutoBASS(cell assembly), again Transportation(cells->Cycler), Cycler(start,export,analysis) and Degradation_model(predict lifetime). For the cycler the Overlort creates one request for each cell defined in the AutoBASS result and also propergates this for the request of lifetime prediction. It summs all results up as one result for the optimizer.
 A logger with self-designed messages is implemented to enable faster debugging and logging.
 
+# Installation
 
-## Acknowledgements
+To install the package, please follow the steps below.
 
-This project received funding from the European Union’s Horizon 2020 research and innovation program under grant agreement no. 957189 (BIG-MAP).
-The authors acknowledge BATTERY2030PLUS, funded by the European Union’s Horizon 2020 research and innovation program under grant agreement no. 957213.
-This work contributes to the research performed at CELEST (Center for Electrochemical Energy Storage Ulm-Karlsruhe) and was co-funded by the German Research Foundation (DFG) under Project ID 390874152 (POLiS Cluster of Excellence).
+1. Clone this repository
+1. Install the packages reported in the requirements.txt
+1. Fill in the blank spaces in the file `src\Overlort\configuration\config.py` according
+to your setup.
+
+# Usage 
+
+To use the Overlort tenant, execute the script `src\Overlort\Overlort_reference.py`.
+
+# Acknowledgements
+
+This project received funding from the European Union’s
+[Horizon 2020 research and innovation programme](https://ec.europa.eu/programmes/horizon2020/en)
+under grant agreement [No 957189](https://cordis.europa.eu/project/id/957189) (BIG-MAP).
+The authors acknowledge BATTERY2030PLUS, funded by the European Union’s Horizon 2020
+research and innovation program under grant agreement no. 957213.
+This work contributes to the research performed at CELEST (Center for Electrochemical
+Energy Storage Ulm-Karlsruhe) and was co-funded by the German Research Foundation (DFG)
+under Project ID 390874152 (POLiS Cluster of Excellence).
